@@ -44,7 +44,7 @@ namespace Edenred.DataAccess.Repositories
         public async Task<TEntity> AddAsync(TEntity entity)
         {
             await _dbSet.AddAsync(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return entity;
         }
 
